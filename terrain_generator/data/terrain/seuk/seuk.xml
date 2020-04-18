@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="0.55" lat="51.25" tiles="2">
+ <elevation>
+  <file path="data/terrain/seuk/n50_e000_1arc_v3.tif"/>
+  <file path="data/terrain/seuk/n51_e000_1arc_v3.tif"/>
+  <file path="data/terrain/seuk/n51_e001_1arc_v3.tif"/>
+  <file path="data/terrain/seuk/n50_w001_1arc_v3.tif"/>
+  <file path="data/terrain/seuk/n51_w001_1arc_v3.tif"/>
+ </elevation>
+ <exclusion/>
+ <land_crops/>
+ <land_trees>
+  <file path="data/terrain/seuk/trees.tif"/>
+ </land_trees>
+ <land_urban>
+  <file path="data/terrain/seuk/urban.tif"/>
+ </land_urban>
+ <land_water>
+  <file path="data/terrain/seuk/mod44w.tif"/>
+ </land_water>
+ <detailed/>
+</terrain>

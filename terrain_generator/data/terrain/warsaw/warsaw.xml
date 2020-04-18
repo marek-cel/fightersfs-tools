@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="21.0083" lat="52.2322" tiles="2">
+ <elevation>
+  <file path="data/terrain/warsaw/n51_e020_1arc_v3.tif"/>
+  <file path="data/terrain/warsaw/n51_e021_1arc_v3.tif"/>
+  <file path="data/terrain/warsaw/n52_e020_1arc_v3.tif"/>
+  <file path="data/terrain/warsaw/n52_e021_1arc_v3.tif"/>
+ </elevation>
+ <exclusion>
+  <file path="data/terrain/warsaw/exclusion_mokotow.tif"/>
+  <file path="data/terrain/warsaw/exclusion_zielonka.tif"/>
+ </exclusion>
+ <land_crops/>
+ <land_trees>
+  <file path="data/terrain/warsaw/trees.tif"/>
+ </land_trees>
+ <land_urban>
+  <file path="data/terrain/warsaw/urban.tif"/>
+ </land_urban>
+ <land_water>
+  <file path="data/terrain/warsaw/mod44w.tif"/>
+ </land_water>
+ <detailed>
+  <file path="data/terrain/warsaw/warsaw_detailed.osgb"/>
+ </detailed>
+</terrain>

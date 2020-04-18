@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="155.6" lat="-6.7" tiles="2">
+ <elevation>
+  <file path="data/terrain/bougainville/srtm_1.tif"/>
+ </elevation>
+ <exclusion/>
+ <land_crops/>
+ <land_trees>
+  <file path="data/terrain/bougainville/trees_1.tif"/>
+ </land_trees>
+ <land_urban/>
+ <land_water>
+  <file path="data/terrain/bougainville/vmap0_watermask.tif"/>
+ </land_water>
+ <detailed/>
+</terrain>

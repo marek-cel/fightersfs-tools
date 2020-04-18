@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="-157.966" lat="21.467" tiles="2">
+ <elevation>
+  <file path="data/terrain/oahu/srtm_1.tif"/>
+  <file path="data/terrain/oahu/srtm_2.tif"/>
+  <file path="data/terrain/oahu/srtm.tif"/>
+ </elevation>
+ <exclusion/>
+ <land_crops>
+  <file path="data/terrain/oahu/crops.tif"/>
+ </land_crops>
+ <land_trees>
+  <file path="data/terrain/oahu/trees.tif"/>
+ </land_trees>
+ <land_urban>
+  <file path="data/terrain/oahu/urban.tif"/>
+ </land_urban>
+ <land_water>
+  <file path="data/terrain/oahu/watermask.tif"/>
+ </land_water>
+ <detailed>
+  <file path="data/terrain/oahu/oahu_detailed.osgb"/>
+ </detailed>
+</terrain>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="0.9" lon="160.235" lat="-9.4" tiles="2">
+ <elevation>
+  <file path="data/terrain/guadalcanal/srtm41_1_cropped.tif"/>
+  <file path="data/terrain/guadalcanal/srtm41_2.tif"/>
+ </elevation>
+ <exclusion>
+  <file path="data/terrain/guadalcanal/exclusion_1.tif"/>
+ </exclusion>
+ <land_crops/>
+ <land_trees>
+  <file path="data/terrain/guadalcanal/trees_1.tif"/>
+  <file path="data/terrain/guadalcanal/trees_2.tif"/>
+ </land_trees>
+ <land_urban>
+  <file path="data/terrain/guadalcanal/vmap_urban_1.tif"/>
+  <file path="data/terrain/guadalcanal/vmap_urban_2.tif"/>
+ </land_urban>
+ <land_water>
+  <file path="data/terrain/guadalcanal/mod44w_1_cropped.tif"/>
+  <file path="data/terrain/guadalcanal/mod44w_2.tif"/>
+ </land_water>
+ <detailed>
+  <file path="data/terrain/guadalcanal/guadalcanal_detailed.osgb"/>
+ </detailed>
+</terrain>

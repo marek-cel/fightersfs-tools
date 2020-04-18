@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="-177.35" lat="28.2" tiles="2">
+ <elevation>
+  <file path="data/terrain/midway/srtm.tif"/>
+ </elevation>
+ <exclusion>
+  <file path="data/terrain/midway/exclusion.tif"/>
+ </exclusion>
+ <land_crops/>
+ <land_trees/>
+ <land_urban/>
+ <land_water>
+  <file path="data/terrain/midway/vmap0_watermask.tif"/>
+ </land_water>
+ <detailed>
+  <file path="data/terrain/midway/midway_detailed.osgb"/>
+ </detailed>
+</terrain>

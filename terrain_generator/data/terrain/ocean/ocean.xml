@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<terrain scale="1" lon="0" lat="0" tiles="2">
+ <elevation/>
+ <exclusion/>
+ <land_crops/>
+ <land_trees/>
+ <land_urban/>
+ <land_water/>
+ <detailed/>
+</terrain>
