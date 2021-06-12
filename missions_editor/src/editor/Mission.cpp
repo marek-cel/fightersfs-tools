@@ -20,7 +20,10 @@
  * IN THE SOFTWARE.
  ******************************************************************************/
 
+#include <editor/Mission.h>
+
 #include <iostream>
+#include <sstream>
 
 #include <osg/Vec3d>
 
@@ -29,7 +32,7 @@
 
 #include <Languages.h>
 
-#include <editor/Mission.h>
+#include <editor/Misc.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -768,13 +771,21 @@ bool Mission::readRoutes( QDomElement &xmlNode )
 
             if ( !positionNode.isNull() && !speedNode.isNull() )
             {
-                int x = 0.0;
-                int y = 0.0;
-                int z = 0.0;
-                int v = 0.0;
+                int x = std::numeric_limits< int >::quiet_NaN();
+                int y = std::numeric_limits< int >::quiet_NaN();
+                int z = std::numeric_limits< int >::quiet_NaN();
+                int v = std::numeric_limits< int >::quiet_NaN();
 
-                if ( 3 == sscanf( positionNode.text().toStdString().c_str(), "%d %d %d", &x, &y, &z )
-                  && 1 == sscanf( speedNode.text().toStdString().c_str(), "%d", &v ) )
+                std::stringstream ssp( positionNode .text().toStdString() );
+                std::stringstream ssv( speedNode    .text().toStdString() );
+
+                ssp >> x;
+                ssp >> y;
+                ssp >> z;
+                ssv >> v;
+
+                if ( Misc::isValid( x ) && Misc::isValid( y ) && Misc::isValid( z )
+                  && Misc::isValid( v ))
                 {
                     Waypoint waypoint;
 

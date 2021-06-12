@@ -1,5 +1,5 @@
 /****************************************************************************//*
- * Copyright (C) 2020 Marek M. Cel
+ * Copyright (C) 2021 Marek M. Cel
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the "Software"),
@@ -19,46 +19,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  ******************************************************************************/
-
-#include <QApplication>
-
-#include <defs.h>
-#include <gui/MainWindow.h>
-
-#include <TexturesGenerator.h>
-
-#include <gen/Common.h>
+#ifndef KEYMAP_H
+#define KEYMAP_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int main(int argc, char *argv[])
+#include <osgGA/GUIEventAdapter>
+
+////////////////////////////////////////////////////////////////////////////////
+
+/** */
+class KeyMap
 {
-    setlocale( LC_ALL, "C" );
+public:
 
-    QLocale::setDefault( QLocale::system() );
+    static osgGA::GUIEventAdapter::KeySymbol remapOSG( int key_qt );
+};
 
-    Common::getInstance()->init();
+////////////////////////////////////////////////////////////////////////////////
 
-    QApplication *app = new QApplication( argc, argv );
-
-    app->setApplicationName    ( APP_NAME );
-    app->setApplicationVersion ( APP_VER );
-    app->setOrganizationDomain ( ORG_DOMAIN );
-    app->setOrganizationName   ( ORG_NAME );
-
-//    TexturesGenerator tgen;
-//    tgen.generateTextures();
-
-    MainWindow *win = new MainWindow();
-    win->show();
-    
-    int result = app->exec();
-
-    if ( win ) delete win;
-    win = 0;
-
-    if ( app ) delete app;
-    app = 0;
-
-    return result;
-}
+#endif // KEYMAP_H

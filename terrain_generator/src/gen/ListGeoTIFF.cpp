@@ -94,7 +94,8 @@ void ListGeoTIFF::clearFiles()
 {
     for ( unsigned int i = 0; i < m_listFiles.size(); i++ )
     {
-        if ( m_listFiles[ i ] ) delete m_listFiles[ i ]; m_listFiles[ i ] = 0;
+        if ( m_listFiles[ i ] ) delete m_listFiles[ i ];
+        m_listFiles[ i ] = 0;
     }
 
     m_listFiles.clear();

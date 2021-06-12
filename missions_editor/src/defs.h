@@ -24,12 +24,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#define EDITOR_NAME "FSG Missions Editor"
+#define APP_TITLE "FightersFS Missions Editor"
 
-#define EDITOR_APP_NAME    "FSG_Missions_Editor"
-#define EDITOR_APP_VER     "1.0"
-#define EDITOR_ORG_NAME    "Marek_Cel"
-#define EDITOR_ORG_DOMAIN  "marekcel.pl"
+#define APP_NAME   "FightersFS_Missions_Editor"
+#define APP_VER    "1.0"
+#define ORG_NAME   "Marek_Cel"
+#define ORG_DOMAIN "marekcel.pl"
 
 ////////////////////////////////////////////////////////////////////////////////
 

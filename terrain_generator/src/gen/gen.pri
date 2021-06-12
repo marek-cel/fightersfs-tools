@@ -1,31 +1,31 @@
 HEADERS += \
-    gen/Common.h \
-    gen/Document.h \
-    gen/Elevation.h \
-    gen/Exclusion.h \
-    gen/Geo.h \
-    gen/GeoTIFF.h \
-    gen/LandCover.h \
-    gen/ListGeoTIFF.h \
-    gen/Markers.h \
-    gen/Models.h \
-    gen/Singleton.h \
-    gen/Terrain.h \
-    gen/Textures.h \
-    gen/Tile.h \
-    gen/Types.h
+    $$PWD/Common.h \
+    $$PWD/Document.h \
+    $$PWD/Elevation.h \
+    $$PWD/Exclusion.h \
+    $$PWD/Geo.h \
+    $$PWD/GeoTIFF.h \
+    $$PWD/LandCover.h \
+    $$PWD/ListGeoTIFF.h \
+    $$PWD/Markers.h \
+    $$PWD/Models.h \
+    $$PWD/Singleton.h \
+    $$PWD/Terrain.h \
+    $$PWD/Textures.h \
+    $$PWD/Tile.h \
+    $$PWD/Types.h
 
 SOURCES += \
-    gen/Common.cpp \
-    gen/Document.cpp \
-    gen/Elevation.cpp \
-    gen/Exclusion.cpp \
-    gen/Geo.cpp \
-    gen/GeoTIFF.cpp \
-    gen/LandCover.cpp \
-    gen/ListGeoTIFF.cpp \
-    gen/Markers.cpp \
-    gen/Models.cpp \
-    gen/Terrain.cpp \
-    gen/Textures.cpp \
-    gen/Tile.cpp
+    $$PWD/Common.cpp \
+    $$PWD/Document.cpp \
+    $$PWD/Elevation.cpp \
+    $$PWD/Exclusion.cpp \
+    $$PWD/Geo.cpp \
+    $$PWD/GeoTIFF.cpp \
+    $$PWD/LandCover.cpp \
+    $$PWD/ListGeoTIFF.cpp \
+    $$PWD/Markers.cpp \
+    $$PWD/Models.cpp \
+    $$PWD/Terrain.cpp \
+    $$PWD/Textures.cpp \
+    $$PWD/Tile.cpp

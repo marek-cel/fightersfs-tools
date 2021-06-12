@@ -83,6 +83,8 @@ Text::~Text() {}
 Text& Text::operator= ( const Text &text )
 {
     m_strings = text.m_strings;
+
+    return (*this);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -212,7 +212,7 @@ void MainWindow::readFile( QString fileName )
     {
         if ( !m_ui->widgetDoc->readFile( fileName ) )
         {
-            QMessageBox::warning( this, tr( EDITOR_NAME ),
+            QMessageBox::warning( this, tr( APP_TITLE ),
                                   tr( "Cannot read file %1:." ).arg( fileName ) );
         }
         else
@@ -240,7 +240,7 @@ void MainWindow::saveFile( QString fileName )
     }
     else
     {
-        QMessageBox::warning( this, tr( EDITOR_NAME ),
+        QMessageBox::warning( this, tr( APP_TITLE ),
                               tr( "Cannot save file %1:." ).arg(fileName) );
     }
 
@@ -251,7 +251,7 @@ void MainWindow::saveFile( QString fileName )
 
 void MainWindow::settingsRead()
 {
-    QSettings settings( EDITOR_ORG_NAME, EDITOR_APP_NAME );
+    QSettings settings( ORG_NAME, APP_NAME );
 
     settings.beginGroup( "main_window" );
 
@@ -276,7 +276,7 @@ void MainWindow::settingsRead_RecentFiles( QSettings &settings )
 
 void MainWindow::settingsSave()
 {
-    QSettings settings( EDITOR_ORG_NAME, EDITOR_APP_NAME );
+    QSettings settings( ORG_NAME, APP_NAME );
 
     settings.beginGroup( "main_window" );
 
@@ -299,7 +299,7 @@ void MainWindow::settingsSave_RecentFiles( QSettings &settings )
 
 void MainWindow::updateGUI()
 {
-    QString title = EDITOR_NAME;
+    QString title = tr( APP_TITLE );
 
     if ( m_currentFile.length() > 0 )
     {

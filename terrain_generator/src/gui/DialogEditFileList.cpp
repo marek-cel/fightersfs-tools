@@ -41,7 +41,8 @@ int DialogEditFileList::editFileList( QVector< QString > &fileList, QWidget *par
         fileList = dialog->m_fileList;
     }
 
-    if ( dialog ) delete dialog; dialog = 0;
+    if ( dialog ) delete dialog;
+    dialog = 0;
 
     return result;
 }
@@ -63,7 +64,8 @@ DialogEditFileList::DialogEditFileList( QVector< QString > fileList, QWidget *pa
 
 DialogEditFileList::~DialogEditFileList()
 {
-    if ( m_ui ) delete m_ui; m_ui = 0;
+    if ( m_ui ) delete m_ui;
+    m_ui = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

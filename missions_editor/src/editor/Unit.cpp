@@ -20,14 +20,18 @@
  * IN THE SOFTWARE.
  ******************************************************************************/
 
+#include <editor/Unit.h>
+
 #include <iostream>
-#include <stdio.h>
+#include <sstream>
+#include <limits>
 
 #include <QFileInfo>
 
+#include <editor/Misc.h>
 #include <editor/Mission.h>
 #include <editor/ObjectiveDestroy.h>
-#include <editor/Unit.h>
+
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -47,7 +51,7 @@ Unit::Type Unit::nameToType( const QString &name )
         std::cerr << "Unknown unit type: " << name.toStdString() << std::endl;
     }
 
-#warning UNIT_TYPE
+#   warning UNIT_TYPE
 
     return Unknown;
 }
@@ -132,11 +136,17 @@ Unit* Unit::readUnit( QDomElement &xmlNode, Affiliation affiliation )
 
             if ( !offsetNode.isNull() )
             {
-                double x = 0.0;
-                double y = 0.0;
-                double z = 0.0;
+                double x = std::numeric_limits< double >::quiet_NaN();
+                double y = std::numeric_limits< double >::quiet_NaN();
+                double z = std::numeric_limits< double >::quiet_NaN();
 
-                if ( 3 == sscanf( offsetNode.text().toStdString().c_str(), "%lf %lf %lf", &x, &y, &z ) )
+                std::stringstream ss( offsetNode.text().toStdString() );
+
+                ss >> x;
+                ss >> y;
+                ss >> z;
+
+                if ( Misc::isValid( x ) && Misc::isValid( y ) && Misc::isValid( z ) )
                 {
                     offset = osg::Vec3d( x, y, z );
                 }
@@ -147,11 +157,17 @@ Unit* Unit::readUnit( QDomElement &xmlNode, Affiliation affiliation )
 
             if ( !positionNode.isNull() )
             {
-                double x = 0.0;
-                double y = 0.0;
-                double z = 0.0;
+                double x = std::numeric_limits< double >::quiet_NaN();
+                double y = std::numeric_limits< double >::quiet_NaN();
+                double z = std::numeric_limits< double >::quiet_NaN();
 
-                if ( 3 == sscanf( positionNode.text().toStdString().c_str(), "%lf %lf %lf", &x, &y, &z ) )
+                std::stringstream ss( positionNode.text().toStdString().c_str() );
+
+                ss >> x;
+                ss >> y;
+                ss >> z;
+
+                if ( Misc::isValid( x ) && Misc::isValid( y ) && Misc::isValid( z ) )
                 {
                     position = osg::Vec3d( x, y, z );
                 }

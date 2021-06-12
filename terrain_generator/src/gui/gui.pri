@@ -1,18 +1,22 @@
 HEADERS += \
-    gui/DialogEditFileList.h \
-    gui/MainWindow.h \
-    gui/RecentFileAction.h \
-    gui/WidgetCGI.h \
-    gui/WidgetDoc.h
+    $$PWD/DialogEditFileList.h \
+    $$PWD/GraphicsWindowQt.h \
+    $$PWD/KeyMap.h \
+    $$PWD/MainWindow.h \
+    $$PWD/RecentFileAction.h \
+    $$PWD/WidgetCGI.h \
+    $$PWD/WidgetDoc.h
 
 SOURCES += \
-    gui/DialogEditFileList.cpp \
-    gui/MainWindow.cpp \
-    gui/RecentFileAction.cpp \
-    gui/WidgetCGI.cpp \
-    gui/WidgetDoc.cpp
+    $$PWD/DialogEditFileList.cpp \
+    $$PWD/GraphicsWindowQt.cpp \
+    $$PWD/KeyMap.cpp \
+    $$PWD/MainWindow.cpp \
+    $$PWD/RecentFileAction.cpp \
+    $$PWD/WidgetCGI.cpp \
+    $$PWD/WidgetDoc.cpp
 
 FORMS += \
-    gui/DialogEditFileList.ui \
-    gui/MainWindow.ui \
-    gui/WidgetDoc.ui
+    $$PWD/DialogEditFileList.ui \
+    $$PWD/MainWindow.ui \
+    $$PWD/WidgetDoc.ui

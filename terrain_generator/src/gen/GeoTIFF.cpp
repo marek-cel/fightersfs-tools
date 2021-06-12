@@ -21,8 +21,9 @@
  ******************************************************************************/
 
 #include <limits>
+#include <iomanip>
 #include <iostream>
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 
 #include <gdal/gdal.h>
@@ -61,9 +62,23 @@ GeoTIFF::GeoTIFF( const char *file ) :
             getGeo(          0,          0, m_ul_lat, m_ul_lon );
             getGeo( m_raster_w, m_raster_h, m_lr_lat, m_lr_lon );
 
-            printf( "Size is %d, %d\n", m_raster_w, m_raster_h );
-            printf( "Upper Left   %12.7f, %12.7f \n", m_ul_lon, m_ul_lat );
-            printf( "Lower Right  %12.7f, %12.7f \n", m_lr_lon, m_lr_lat );
+            std::cout << "Size is " << m_raster_w << " , " << m_raster_h << std::endl;
+
+            std::cout.setf( std::ios_base::showpoint );
+            std::cout.setf( std::ios_base::fixed );
+
+            std::cout << "Upper Left   ";
+            std::cout << std::setfill( ' ' ) << std::setw( 12 ) << std::setprecision( 7 ) << m_ul_lon;
+            std::cout << " , ";
+            std::cout << std::setfill( ' ' ) << std::setw( 12 ) << std::setprecision( 7 ) << m_ul_lat;
+
+            std::cout << "Lower Right  ";
+            std::cout << std::setfill( ' ' ) << std::setw( 12 ) << std::setprecision( 7 ) << m_lr_lon;
+            std::cout << " , ";
+            std::cout << std::setfill( ' ' ) << std::setw( 12 ) << std::setprecision( 7 ) << m_lr_lat;
+
+            std::cout.unsetf( std::ios_base::showpoint );
+            std::cout.unsetf( std::ios_base::fixed );
 
             m_ul_lat *= M_PI / 180.0;
             m_ul_lon *= M_PI / 180.0;
@@ -79,7 +94,17 @@ GeoTIFF::GeoTIFF( const char *file ) :
             double pt_deg_x = 1.0 / osg::DegreesToRadians( m_pt_rad_x );
             double pt_deg_y = 1.0 / osg::DegreesToRadians( m_pt_rad_y );
 
-            printf( "Pixel Size = (%.15f,%.15f)\n", pt_deg_x, pt_deg_y );
+            std::cout.setf( std::ios_base::showpoint );
+            std::cout.setf( std::ios_base::fixed );
+
+            std::cout << "Pixel Size = ";
+            std::cout << std::setprecision( 15 ) << pt_deg_x;
+            std::cout << " , ";
+            std::cout << std::setprecision( 15 ) << pt_deg_y;
+            std::cout << std::endl;
+
+            std::cout.unsetf( std::ios_base::showpoint );
+            std::cout.unsetf( std::ios_base::fixed );
 
             fflush( stdout );
         }

@@ -32,20 +32,16 @@ int main(int argc, char *argv[])
 {
     setlocale( LC_ALL, "C" );
 
-#   ifdef _LINUX_
-    setenv( "LC_NUMERIC", "en_US", 1 );
-#   endif
+    QLocale::setDefault( QLocale::system() );
 
     QApplication *app = new QApplication( argc, argv );
 
-    QTextCodec::setCodecForCStrings( QTextCodec::codecForName( "UTF-8" ) );
     QTextCodec::setCodecForLocale( QTextCodec::codecForName( "UTF-8" ) );
-    QTextCodec::setCodecForTr( QTextCodec::codecForName( "UTF-8" ) );
 
-    app->setApplicationName( EDITOR_APP_NAME );
-    app->setApplicationVersion( EDITOR_APP_VER );
-    app->setOrganizationDomain( EDITOR_ORG_DOMAIN );
-    app->setOrganizationName( EDITOR_ORG_NAME );
+    app->setApplicationName    ( APP_NAME   );
+    app->setApplicationVersion ( APP_VER    );
+    app->setOrganizationDomain ( ORG_DOMAIN );
+    app->setOrganizationName   ( ORG_NAME   );
 
     MainWindow *win = new MainWindow();
     win->show();

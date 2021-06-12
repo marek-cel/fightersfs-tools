@@ -1,5 +1,6 @@
 HEADERS += \
     editor/Message.h \
+    editor/Misc.h \
     editor/Mission.h \
     editor/Objective.h \
     editor/ObjectiveAirspeed.h \

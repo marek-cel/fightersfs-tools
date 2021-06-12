@@ -104,7 +104,7 @@ void WidgetCGI::paintEvent( QPaintEvent *event )
 
 ////////////////////////////////////////////////////////////////////////////////
 
-QWidget* WidgetCGI::addViewWidget( osgQt::GraphicsWindowQt *graphicsWindow, osg::Node *scene )
+QWidget* WidgetCGI::addViewWidget( GraphicsWindowQt *graphicsWindow, osg::Node *scene )
 {
     osg::ref_ptr<osg::Camera> camera = getCamera();
 
@@ -131,7 +131,7 @@ QWidget* WidgetCGI::addViewWidget( osgQt::GraphicsWindowQt *graphicsWindow, osg:
 
 ////////////////////////////////////////////////////////////////////////////////
 
-osg::ref_ptr<osgQt::GraphicsWindowQt> WidgetCGI::createGraphicsWindow( int x, int y, int w, int h, const std::string &name, bool windowDecoration )
+osg::ref_ptr<GraphicsWindowQt> WidgetCGI::createGraphicsWindow( int x, int y, int w, int h, const std::string &name, bool windowDecoration )
 {
     osg::DisplaySettings *displaySettings = osg::DisplaySettings::instance().get();
     osg::ref_ptr<osg::GraphicsContext::Traits> traits = new osg::GraphicsContext::Traits();
@@ -148,7 +148,7 @@ osg::ref_ptr<osgQt::GraphicsWindowQt> WidgetCGI::createGraphicsWindow( int x, in
     traits->sampleBuffers    = displaySettings->getMultiSamples();
     traits->samples          = displaySettings->getNumMultiSamples();
 
-    osg::ref_ptr<osgQt::GraphicsWindowQt> graphicsWindow =  new osgQt::GraphicsWindowQt( traits.get() );
+    osg::ref_ptr<GraphicsWindowQt> graphicsWindow =  new GraphicsWindowQt( traits.get() );
 
     return graphicsWindow;
 }

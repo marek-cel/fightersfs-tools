@@ -1,10 +1,10 @@
 HEADERS += \
-    cgi/ManipulatorOrbit.h \
-    cgi/ManipulatorWorld.h \
-    cgi/SceneRoot.h
+    $$PWD/ManipulatorOrbit.h \
+    $$PWD/ManipulatorWorld.h \
+    $$PWD/SceneRoot.h
 
 
 SOURCES += \
-    cgi/ManipulatorOrbit.cpp \
-    cgi/ManipulatorWorld.cpp \
-    cgi/SceneRoot.cpp
+    $$PWD/ManipulatorOrbit.cpp \
+    $$PWD/ManipulatorWorld.cpp \
+    $$PWD/SceneRoot.cpp

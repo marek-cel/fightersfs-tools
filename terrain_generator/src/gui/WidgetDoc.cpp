@@ -44,10 +44,12 @@ WidgetDoc::WidgetDoc( QWidget *parent ) :
 
 WidgetDoc::~WidgetDoc()
 {
-    if ( m_doc ) delete m_doc; m_doc = 0;
+    if ( m_doc ) delete m_doc;
+    m_doc = 0;
 
     //////////////////////////////////
-    if ( m_ui ) delete m_ui; m_ui = 0;
+    if ( m_ui ) delete m_ui;
+    m_ui = 0;
     //////////////////////////////////
 }
 

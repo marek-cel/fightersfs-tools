@@ -13,6 +13,8 @@ HEADERS += \
     gui/DialogEditObjectiveTimeout.h \
     gui/DialogEditObjectiveWaypoint.h \
     gui/DialogEditWaypoint.h \
+    gui/GraphicsWindowQt.h \
+    gui/KeyMap.h \
     gui/MainWindow.h \
     gui/RecentFileAction.h \
     gui/WidgetCGI.h \
@@ -35,6 +37,8 @@ SOURCES += \
     gui/DialogEditObjectiveTimeout.cpp \
     gui/DialogEditObjectiveWaypoint.cpp \
     gui/DialogEditWaypoint.cpp \
+    gui/GraphicsWindowQt.cpp \
+    gui/KeyMap.cpp \
     gui/MainWindow.cpp \
     gui/RecentFileAction.cpp \
     gui/WidgetCGI.cpp \

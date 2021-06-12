@@ -151,9 +151,14 @@ Terrain::Terrain( QDomElement *xmlNode ) :
 
 Terrain::~Terrain()
 {
-    if ( m_elevation ) delete m_elevation; m_elevation = 0;
-    if ( m_exclusion ) delete m_exclusion; m_exclusion = 0;
-    if ( m_landCover ) delete m_landCover; m_landCover = 0;
+    if ( m_elevation ) delete m_elevation;
+    m_elevation = 0;
+
+    if ( m_exclusion ) delete m_exclusion;
+    m_exclusion = 0;
+
+    if ( m_landCover ) delete m_landCover;
+    m_landCover = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -172,9 +177,14 @@ void Terrain::newEmpty()
         m_root->removeChildren( 0, m_root->getNumChildren() );
     }
 
-    if ( m_elevation ) delete m_elevation; m_elevation = new Elevation();
-    if ( m_exclusion ) delete m_exclusion; m_exclusion = new Exclusion();
-    if ( m_landCover ) delete m_landCover; m_landCover = new LandCover();
+    if ( m_elevation ) delete m_elevation;
+    m_elevation = new Elevation();
+
+    if ( m_exclusion ) delete m_exclusion;
+    m_exclusion = new Exclusion();
+
+    if ( m_landCover ) delete m_landCover;
+    m_landCover = new LandCover();
 
     m_detailed.clear();
 
@@ -253,9 +263,9 @@ void Terrain::generate()
 
 bool Terrain::generateElevation( QString fileName )
 {
-    FILE *file = fopen( fileName.toStdString().c_str(), "w" );
+    std::fstream file( fileName.toStdString().c_str(), std::ios_base::out );
 
-    if ( file )
+    if ( file.is_open() )
     {
         std::vector< osg::ref_ptr<osg::Node> > detailedNodes;
 
@@ -273,7 +283,7 @@ bool Terrain::generateElevation( QString fileName )
         const double scale = 10.0;
         const double coef = 1.0 / scale;
 
-        fprintf( file, "%d,%lf,%lf\n", nodes, coef, Common::stepH );
+        file << nodes << "," << coef << "," << Common::stepH << std::endl;
 
         for ( int ix = 0; ix < nodes; ix++ )
         {
@@ -281,7 +291,7 @@ bool Terrain::generateElevation( QString fileName )
 
             if ( ix > 0 )
             {
-                fprintf( file, "\n" );
+                file << std::endl;
             }
 
             double x = ix * Common::stepH - m_tiles * Common::block;
@@ -338,7 +348,7 @@ bool Terrain::generateElevation( QString fileName )
 
                 if ( iy > 0 )
                 {
-                    fprintf( file, "," );
+                    file << ",";
                 }
 
                 if ( z < 0.0 ) z = 0.0;
@@ -347,13 +357,13 @@ bool Terrain::generateElevation( QString fileName )
 
                 int z_int = floor( scale * z + 0.5 );
 
-                fprintf( file, "%d", z_int );
+                file << z_int;
             }
 
             std::cout << "Row " << ix << " of " << nodes << " finished. z_max= " << z_max << std::endl;
         }
 
-        fclose( file );
+        file.close();
 
         std::cout << "GENERETING ELEVATION FINISHED" << std::endl;
 

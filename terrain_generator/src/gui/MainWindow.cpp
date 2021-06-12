@@ -71,10 +71,14 @@ MainWindow::~MainWindow()
 
     settingsSave();
 
-    if ( m_shortcutSave ) delete m_shortcutSave; m_shortcutSave = 0;
-    if ( m_shortcutRefresh ) delete m_shortcutRefresh; m_shortcutRefresh = 0;
+    if ( m_shortcutSave ) delete m_shortcutSave;
+    m_shortcutSave = 0;
 
-    if ( m_ui ) delete m_ui; m_ui = 0;
+    if ( m_shortcutRefresh ) delete m_shortcutRefresh;
+    m_shortcutRefresh = 0;
+
+    if ( m_ui ) delete m_ui;
+    m_ui = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -262,7 +266,7 @@ void MainWindow::readFile( QString fileName )
     {
         if ( !m_ui->widgetDoc->readFile( fileName ) )
         {
-            QMessageBox::warning( this, tr( GEN_NAME ),
+            QMessageBox::warning( this, tr( APP_TITLE ),
                                  tr( "Cannot read file %1:." ).arg( fileName ) );
         }
     }
@@ -280,7 +284,7 @@ void MainWindow::saveFile( QString fileName )
     }
     else
     {
-        QMessageBox::warning( this, tr( GEN_NAME ),
+        QMessageBox::warning( this, tr( APP_TITLE ),
                              tr( "Cannot save file %1:." ).arg(fileName) );
     }
 
@@ -293,7 +297,7 @@ void MainWindow::exportAs( QString fileName )
 {
     if ( !m_ui->widgetDoc->exportAs( fileName ) )
     {
-        QMessageBox::warning( this, tr( GEN_NAME ),
+        QMessageBox::warning( this, tr( APP_TITLE ),
                              tr( "Cannot export file %1:." ).arg(fileName) );
     }
 }
@@ -304,7 +308,7 @@ void MainWindow::generateElevation( QString fileName )
 {
     if ( !m_ui->widgetDoc->generateElevation( fileName ) )
     {
-        QMessageBox::warning( this, tr( GEN_NAME ),
+        QMessageBox::warning( this, tr( APP_TITLE ),
                              tr( "Cannot generate file %1:." ).arg(fileName) );
     }
 }
@@ -313,7 +317,7 @@ void MainWindow::generateElevation( QString fileName )
 
 void MainWindow::settingsRead()
 {
-    QSettings settings( GEN_ORG_NAME, GEN_APP_NAME );
+    QSettings settings( ORG_NAME, APP_NAME );
 
     settings.beginGroup( "main_window" );
 
@@ -338,7 +342,7 @@ void MainWindow::settingsRead_RecentFiles( QSettings &settings )
 
 void MainWindow::settingsSave()
 {
-    QSettings settings( GEN_ORG_NAME, GEN_APP_NAME );
+    QSettings settings( ORG_NAME, APP_NAME );
 
     settings.beginGroup( "main_window" );
 
@@ -363,7 +367,7 @@ void MainWindow::updateGUI()
 {
     m_ui->widgetCGI->setRootNode( m_ui->widgetDoc->getRootNode() );
 
-    QString title = GEN_NAME;
+    QString title = tr( APP_TITLE );
 
     if ( m_currentFile.length() > 0 )
     {
