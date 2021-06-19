@@ -17,9 +17,6 @@
    <iconset resource="../missions_editor.qrc">
     <normaloff>:/images/missions.svg</normaloff>:/images/missions.svg</iconset>
   </property>
-  <property name="locale">
-   <locale language="English" country="UnitedStates"/>
-  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">

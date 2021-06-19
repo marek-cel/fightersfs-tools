@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>Edit Objective Timeout</string>
   </property>
-  <property name="locale">
-   <locale language="English" country="UnitedStates"/>
-  </property>
   <property name="modal">
    <bool>true</bool>
   </property>

@@ -28,13 +28,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+class SceneRoot;
+
 /** */
 class ManipulatorOrbit : public osgGA::NodeTrackerManipulator
 {
 public:
 
     /** Constructor. */
-    ManipulatorOrbit();
+    ManipulatorOrbit( SceneRoot *sceneRoot );
 
 protected:
 
@@ -47,6 +49,8 @@ protected:
                                           const double /*dy*/ );
 
 private:
+
+    SceneRoot *_sceneRoot { nullptr };
 
     void boundDistance();
 };

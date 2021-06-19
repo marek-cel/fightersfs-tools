@@ -17,9 +17,6 @@
    <iconset resource="../terrain_generator.qrc">
     <normaloff>:/img/terrain.svg</normaloff>:/img/terrain.svg</iconset>
   </property>
-  <property name="locale">
-   <locale language="Polish" country="Poland"/>
-  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">

@@ -22,10 +22,13 @@
 
 #include <cgi/ManipulatorOrbit.h>
 
+#include <cgi/SceneRoot.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 
-ManipulatorOrbit::ManipulatorOrbit() :
-    osgGA::NodeTrackerManipulator()
+ManipulatorOrbit::ManipulatorOrbit( SceneRoot *sceneRoot ) :
+    osgGA::NodeTrackerManipulator(),
+    _sceneRoot ( sceneRoot )
 {
     setTrackerMode( NODE_CENTER );
 

@@ -28,13 +28,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+class SceneRoot;
+
 /** World view camera manipulator class. */
 class ManipulatorWorld : public osgGA::TerrainManipulator
 {
 public:
 
     /** Constructor. */
-    ManipulatorWorld();
+    ManipulatorWorld( SceneRoot *sceneRoot );
 
 protected:
 
@@ -47,6 +49,8 @@ protected:
                                           const double /*dy*/ );
 
 private:
+
+    SceneRoot *_sceneRoot { nullptr };
 
     /** Bounds maximum distance to 10.0e4 meters. */
     void boundDistance();

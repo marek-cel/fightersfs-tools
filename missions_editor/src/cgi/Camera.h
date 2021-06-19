@@ -29,13 +29,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+class SceneRoot;
+
 /** Camera control class. */
 class Camera
 {
 public:
 
     /** Constructor. */
-    Camera();
+    Camera( SceneRoot *sceneRoot );
 
     /** Destructor. */
     virtual ~Camera();

@@ -22,12 +22,14 @@
 
 #include <cgi/Camera.h>
 
+#include <cgi/SceneRoot.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 
-Camera::Camera()
+Camera::Camera( SceneRoot *sceneRoot )
 {
-    m_manipulatorOrbit = new ManipulatorOrbit();
-    m_manipulatorWorld = new ManipulatorWorld();
+    m_manipulatorOrbit = new ManipulatorOrbit( sceneRoot );
+    m_manipulatorWorld = new ManipulatorWorld( sceneRoot );
 
     m_manipulator = m_manipulatorWorld.get();
 }

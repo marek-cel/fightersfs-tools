@@ -22,10 +22,13 @@
 
 #include <cgi/ManipulatorWorld.h>
 
+#include <cgi/SceneRoot.h>
+
 ////////////////////////////////////////////////////////////////////////////////
 
-ManipulatorWorld::ManipulatorWorld() :
-    osgGA::TerrainManipulator()
+ManipulatorWorld::ManipulatorWorld( SceneRoot *sceneRoot ) :
+    osgGA::TerrainManipulator(),
+    _sceneRoot ( sceneRoot )
 {
     setWheelZoomFactor( -getWheelZoomFactor() );
 }
