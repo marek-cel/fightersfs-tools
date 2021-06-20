@@ -526,34 +526,34 @@ bool Mission::readData( QDomElement &xmlNode )
         bool status = true;
 
         // icon
-        if ( status )
-        {
-            QDomElement iconNode = xmlNode.firstChildElement( "icon" );
-
-            if ( !iconNode.isNull() )
-            {
-                m_missionIcon = iconNode.text().toStdString();
-            }
-            else
-            {
-                status = false;
-            }
-        }
+        //if ( status )
+        //{
+        //    QDomElement iconNode = xmlNode.firstChildElement( "icon" );
+        //
+        //    if ( !iconNode.isNull() )
+        //    {
+        //        m_missionIcon = iconNode.text().toStdString();
+        //    }
+        //    else
+        //    {
+        //        status = false;
+        //    }
+        //}
 
         // icon locked
-        if ( status )
-        {
-            QDomElement iconLockedNode = xmlNode.firstChildElement( "icon_locked" );
-
-            if ( !iconLockedNode.isNull() )
-            {
-                m_missionIconLocked = iconLockedNode.text().toStdString();
-            }
-            else
-            {
-                status = false;
-            }
-        }
+        //if ( status )
+        //{
+        //    QDomElement iconLockedNode = xmlNode.firstChildElement( "icon_locked" );
+        //
+        //    if ( !iconLockedNode.isNull() )
+        //    {
+        //        m_missionIconLocked = iconLockedNode.text().toStdString();
+        //    }
+        //    else
+        //    {
+        //        status = false;
+        //    }
+        //}
 
         // image
         if ( status )
@@ -980,8 +980,8 @@ void Mission::saveMission( QDomDocument &doc, QDomElement &parentNode )
 
 void Mission::saveData( QDomDocument &doc, QDomElement &parentNode )
 {
-    saveTextNode( doc, parentNode, "icon", m_missionIcon );
-    saveTextNode( doc, parentNode, "icon_locked", m_missionIconLocked );
+    //saveTextNode( doc, parentNode, "icon", m_missionIcon );
+    //saveTextNode( doc, parentNode, "icon_locked", m_missionIconLocked );
     saveTextNode( doc, parentNode, "image", m_missionImage );
     saveTextNode( doc, parentNode, "image_locked", m_missionImageLocked );
     saveTextNode( doc, parentNode, "name", m_missionName );

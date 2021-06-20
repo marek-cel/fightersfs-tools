@@ -48,6 +48,12 @@ WidgetDoc::WidgetDoc( QWidget *parent ) :
     }
 
     m_ui->comboBoxLang->setCurrentIndex( 0 );
+
+    m_ui->labelIcon       ->hide();
+    m_ui->labelIconLocked ->hide();
+
+    m_ui->lineEditIcon       ->hide();
+    m_ui->lineEditIconLocked ->hide();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
