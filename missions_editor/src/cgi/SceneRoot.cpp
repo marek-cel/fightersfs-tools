@@ -57,10 +57,10 @@ SceneRoot::SceneRoot() :
     stateSet->setMode( GL_DEPTH_TEST     , osg::StateAttribute::ON );
     stateSet->setRenderingHint( osg::StateSet::TRANSPARENT_BIN );
 
-    m_camera = new Camera();
-    m_routes = new Routes();
-    m_scenery = new Scenery();
-    m_units = new Units();
+    m_camera  = new Camera( this );
+    m_routes  = new Routes  ();
+    m_scenery = new Scenery ();
+    m_units   = new Units   ();
 
     m_groupRoute = new osg::Group();
 
