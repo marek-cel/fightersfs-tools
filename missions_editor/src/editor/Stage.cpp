@@ -127,7 +127,7 @@ Stage::Stage() :
 
 Stage::~Stage()
 {
-    for ( Objectives::iterator it = m_objectives.begin(); it != m_objectives.end(); it++ )
+    for ( Objectives::iterator it = m_objectives.begin(); it != m_objectives.end(); ++it )
     {
         if ( *it ) delete (*it);
         (*it) = 0;
@@ -158,7 +158,7 @@ void Stage::saveStage( QDomDocument &doc, QDomElement &parentNode )
     QDomElement initUnitsNode = doc.createElement( "init_units" );
     stageNode.appendChild( initUnitsNode );
 
-    for ( InitUnits::iterator it = m_initUnits.begin(); it != m_initUnits.end(); it++ )
+    for ( InitUnits::iterator it = m_initUnits.begin(); it != m_initUnits.end(); ++it )
     {
         QDomElement unitNode = doc.createElement( "unit" );
         initUnitsNode.appendChild( unitNode );
@@ -168,7 +168,7 @@ void Stage::saveStage( QDomDocument &doc, QDomElement &parentNode )
         unitNode.setAttributeNode( nodeUnitName );
     }
 
-    for ( Messages::iterator it = m_messages.begin(); it != m_messages.end(); it++ )
+    for ( Messages::iterator it = m_messages.begin(); it != m_messages.end(); ++it )
     {
         (*it)->saveMessage( doc, stageNode );
     }
@@ -176,7 +176,7 @@ void Stage::saveStage( QDomDocument &doc, QDomElement &parentNode )
     QDomElement objectivesNode = doc.createElement( "objectives" );
     stageNode.appendChild( objectivesNode );
 
-    for ( Objectives::iterator it = m_objectives.begin(); it != m_objectives.end(); it++ )
+    for ( Objectives::iterator it = m_objectives.begin(); it != m_objectives.end(); ++it )
     {
         (*it)->saveObjective( doc, objectivesNode );
     }

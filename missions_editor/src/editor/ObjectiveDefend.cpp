@@ -74,7 +74,7 @@ void ObjectiveDefend::saveObjective( QDomDocument &doc, QDomElement &parentNode 
     nodeMinimum.setValue( minimum );
     objectiveDestroyNode.setAttributeNode( nodeMinimum );
 
-    for ( Units::iterator it = m_units.begin(); it != m_units.end(); it++ )
+    for ( Units::iterator it = m_units.begin(); it != m_units.end(); ++it )
     {
         QDomElement unitNode = doc.createElement( "unit" );
         objectiveDestroyNode.appendChild( unitNode );

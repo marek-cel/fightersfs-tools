@@ -251,7 +251,7 @@ Unit::~Unit()
     // remove unit from all units leaders
     for ( Mission::Units::iterator it = Mission::getInstance()->getUnits().begin();
           it != Mission::getInstance()->getUnits().end();
-          it++ )
+          ++it )
     {
         if ( *it )
         {
@@ -275,14 +275,14 @@ Unit::~Unit()
             }
             else
             {
-                it++;
+                ++it;
             }
         }
 
         // remove unit from all objectives destroy
         for ( Stage::Objectives::iterator it = Mission::getInstance()->getStages()[ i ]->getObjectives().begin();
               it != Mission::getInstance()->getStages()[ i ]->getObjectives().end();
-              it++ )
+              ++it )
         {
             ObjectiveDestroy *obj = dynamic_cast< ObjectiveDestroy* >( (*it) );
 
@@ -298,7 +298,7 @@ Unit::~Unit()
                     }
                     else
                     {
-                        it++;
+                        ++it;
                     }
                 }
             }
@@ -423,7 +423,7 @@ void Unit::setOwnship( bool ownship )
     {
         Mission::Units units = Mission::getInstance()->getUnits();
 
-        for ( Mission::Units::iterator it = units.begin(); it != units.end(); it++ )
+        for ( Mission::Units::iterator it = units.begin(); it != units.end(); ++it )
         {
             (*it)->setOwnship( false );
         }

@@ -107,7 +107,7 @@ void Units::setScale( double coef )
 {
     osg::Vec3d scale( coef, coef, coef );
 
-    for ( PATS::iterator it = m_pats.begin(); it != m_pats.end(); it++ )
+    for ( PATS::iterator it = m_pats.begin(); it != m_pats.end(); ++it )
     {
         (*it)->setScale( scale );
     }

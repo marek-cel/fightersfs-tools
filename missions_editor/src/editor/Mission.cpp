@@ -216,7 +216,7 @@ bool Mission::saveFile( QString fileName )
 
 Unit* Mission::getOwnship()
 {
-    for ( Units::iterator it = m_units.begin(); it != m_units.end(); it++ )
+    for ( Units::iterator it = m_units.begin(); it != m_units.end(); ++it )
     {
         Unit *unit = *it;
 
@@ -236,7 +236,7 @@ Unit* Mission::getOwnship()
 
 Route* Mission::getRouteByName( const std::string &routeName )
 {
-    for ( Routes::iterator it = m_routes.begin(); it != m_routes.end(); it++ )
+    for ( Routes::iterator it = m_routes.begin(); it != m_routes.end(); ++it )
     {
         if ( QString( (*it)->name.c_str() ) == QString( routeName.c_str() ) )
         {
@@ -1019,7 +1019,7 @@ void Mission::saveScenery( QDomDocument &doc, QDomElement &parentNode )
     QDomElement objectsNode = doc.createElement( "objects" );
     parentNode.appendChild( objectsNode );
 
-    for ( ObjectFiles::iterator it = m_objectFiles.begin(); it != m_objectFiles.end(); it++ )
+    for ( ObjectFiles::iterator it = m_objectFiles.begin(); it != m_objectFiles.end(); ++it )
     {
         if ( (*it).length() > 0 )
         {
@@ -1044,7 +1044,7 @@ void Mission::saveRoutes( QDomDocument &doc, QDomElement &parentNode )
         nodeRouteName.setValue( name.c_str() );
         routeNode.setAttributeNode( nodeRouteName );
 
-        for ( Route::iterator it = route->begin(); it != route->end(); it++ )
+        for ( Route::iterator it = route->begin(); it != route->end(); ++it )
         {
             Waypoint waypoint = *it;
 
@@ -1066,7 +1066,7 @@ void Mission::saveRoutes( QDomDocument &doc, QDomElement &parentNode )
 
 void Mission::saveStages( QDomDocument &doc, QDomElement &parentNode )
 {
-    for ( Stages::iterator it = m_stages.begin(); it != m_stages.end(); it++ )
+    for ( Stages::iterator it = m_stages.begin(); it != m_stages.end(); ++it )
     {
         (*it)->saveStage( doc, parentNode );
     }
@@ -1105,7 +1105,7 @@ void Mission::saveUnits( QDomDocument &doc, QDomElement &parentNode )
 
 void Mission::saveOwnship( QDomDocument &doc, QDomElement &parentNode )
 {
-    for ( Units::iterator it = m_units.begin(); it != m_units.end(); it++ )
+    for ( Units::iterator it = m_units.begin(); it != m_units.end(); ++it )
     {
         if ( (*it)->isOwnship() )
         {
@@ -1119,7 +1119,7 @@ void Mission::saveOwnship( QDomDocument &doc, QDomElement &parentNode )
 
 void Mission::saveUnits( QDomDocument &doc, QDomElement &parentNode, Unit::Affiliation affiliation )
 {
-    for ( Units::iterator it = m_units.begin(); it != m_units.end(); it++ )
+    for ( Units::iterator it = m_units.begin(); it != m_units.end(); ++it )
     {
         if ( !(*it)->isOwnship() )
         {

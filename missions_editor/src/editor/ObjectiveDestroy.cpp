@@ -65,7 +65,7 @@ void ObjectiveDestroy::saveObjective( QDomDocument &doc, QDomElement &parentNode
     QDomElement objectiveDestroyNode = doc.createElement( "objective_destroy" );
     parentNode.appendChild( objectiveDestroyNode );
 
-    for ( Units::iterator it = m_units.begin(); it != m_units.end(); it++ )
+    for ( Units::iterator it = m_units.begin(); it != m_units.end(); ++it )
     {
         QDomElement unitNode = doc.createElement( "unit" );
         objectiveDestroyNode.appendChild( unitNode );

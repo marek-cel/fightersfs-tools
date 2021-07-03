@@ -169,7 +169,7 @@ void Message::saveMessage( QDomDocument &doc, QDomElement &parentNode )
     QDomElement captionNode = doc.createElement( "caption" );
     messageNode.appendChild( captionNode );
 
-    for ( Lines::iterator it = m_lines.begin(); it != m_lines.end(); it++ )
+    for ( Lines::iterator it = m_lines.begin(); it != m_lines.end(); ++it )
     {
         Mission::saveTextNode( doc, captionNode, "line", (*it) );
     }

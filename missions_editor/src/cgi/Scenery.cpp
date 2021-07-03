@@ -63,7 +63,7 @@ void Scenery::reloadScenery()
 
         // objects
         for ( Mission::ObjectFiles::iterator it = Mission::getInstance()->getObjects().begin();
-              it != Mission::getInstance()->getObjects().end(); it++ )
+              it != Mission::getInstance()->getObjects().end(); ++it )
         {
             std::string objectFile = "data/" + *it;
 

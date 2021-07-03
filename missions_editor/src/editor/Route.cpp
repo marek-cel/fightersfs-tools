@@ -80,7 +80,7 @@ void Route::decreaseWaypointObjectivesIndeced( int waypointIndex )
                 }
             }
 
-            it++;
+            ++it;
         }
     }
 }
@@ -105,7 +105,7 @@ void Route::increaseWaypointObjectivesIndeced( int waypointIndex )
                 }
             }
 
-            it++;
+            ++it;
         }
     }
 }
@@ -146,7 +146,7 @@ void Route::removeWaypointObjectives()
             }
             else
             {
-                it++;
+                ++it;
             }
         }
     }
